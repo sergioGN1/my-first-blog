@@ -17,7 +17,10 @@ body{
         font-size: 36pt;
         text-decoration: none;
 }
-
+.date {
+        float: right;
+        color: #828282;
+    }
 .content {
         margin-left: 40px;
 }
