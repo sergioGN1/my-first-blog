@@ -1,0 +1,28 @@
+{% extends 'crudTrabajadores/base.html' %}
+
+{% block content %}
+  <table id="tabla" class="table table-striped">
+    <tr>
+      <td>Nombre</td>
+      <td>Apellido</td>
+      <td>DNI</td>
+      <td>Teléfono</td>
+      <td>Cargo</td>
+      <td>Acciones</td>
+    </tr>
+    {% for trabajador in trabajadores %}
+      <tr>
+        <td>{{trabajador.nombre}}</td>
+        <td>{{trabajador.apellido}}</td>
+        <td>{{trabajador.dni}}</td>
+        <td>{{trabajador.telefono}}</td>
+        <td>{{trabajador.cargo}}</td>
+        <td>
+          <a class="btn btn-default" href="{% url 'actualizar_trabajador' pk=trabajador.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a class="btn btn-default" href="{% url 'delete_trabajador' pk=trabajador.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}
